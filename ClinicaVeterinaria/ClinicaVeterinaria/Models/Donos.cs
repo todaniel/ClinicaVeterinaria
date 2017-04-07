@@ -6,6 +6,12 @@ using System.Web;
 namespace ClinicaVeterinaria.Models{
 
     public class Donos{
+
+        //definir um Construtor, para carregar o atributo ListaDeAnimais
+        public Donos(){
+            ListaDeAnimais = new HashSet<Animais>();
+        }
+
         
         public int DonosID { get; set; }
 
@@ -13,5 +19,11 @@ namespace ClinicaVeterinaria.Models{
 
         public string NIF { get; set; }
 
+
+        //********************************************************************************************************
+        //indicar o relacionamento entre Donos e Animais
+        //um DONO tem Muitos ANIMAIS
+        //********************************************************************************************************
+        public virtual ICollection<Animais> ListaDeAnimais { get; set; }
     }
 }
