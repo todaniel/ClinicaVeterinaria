@@ -15,6 +15,10 @@ namespace ClinicaVeterinaria.Models{
 
         public virtual DbSet<Animais> Animais { get; set; }
 
+        public virtual DbSet<Veterinarios> Veterinarios { get; set; }
+
+        public virtual DbSet<Consultas> Consultas { get; set; }
+
 
         //especificar ONDE será criada a Base Dados
         public VetsDB() : base("LocalizacaoDaBD") { }

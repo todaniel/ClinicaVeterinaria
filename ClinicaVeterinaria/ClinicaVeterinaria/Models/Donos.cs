@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,23 +8,26 @@ namespace ClinicaVeterinaria.Models{
 
     public class Donos{
 
-        //definir um Construtor, para carregar o atributo ListaDeAnimais
-        public Donos(){
+        // vai representar os dados da tabela dos DONOS
+
+        // criar o construtor desta classe
+        // e carregar a lista de Animais
+        public Donos()
+        {
             ListaDeAnimais = new HashSet<Animais>();
         }
 
-        
-        public int DonosID { get; set; }
 
-        public string Nome { get; set; }
+        [Key]
+        public int DonoID { get; set; }
 
+        [Required]
+        public string Nome { set; get; }
+
+        [Required]
         public string NIF { get; set; }
 
-
-        //********************************************************************************************************
-        //indicar o relacionamento entre Donos e Animais
-        //um DONO tem Muitos ANIMAIS
-        //********************************************************************************************************
-        public virtual ICollection<Animais> ListaDeAnimais { get; set; }
+        // especificar que um DONO tem muitos ANIMAIS
+        public ICollection<Animais> ListaDeAnimais { get; set; }
     }
 }
