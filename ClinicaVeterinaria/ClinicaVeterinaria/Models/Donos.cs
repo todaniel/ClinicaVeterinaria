@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -12,16 +13,17 @@ namespace ClinicaVeterinaria.Models{
 
         // criar o construtor desta classe
         // e carregar a lista de Animais
-        public Donos()
-        {
+        public Donos(){
             ListaDeAnimais = new HashSet<Animais>();
         }
 
 
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]//A PK não será AutoNumber
         public int DonoID { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="o {0} é de Preenchimento Obrigatório")]
+        [Display(Name ="Nome do Dono do Animal")]
         public string Nome { set; get; }
 
         [Required]
