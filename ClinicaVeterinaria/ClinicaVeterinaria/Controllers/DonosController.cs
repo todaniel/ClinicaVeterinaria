@@ -9,13 +9,22 @@ using System.Web.Mvc;
 using ClinicaVeterinaria.Models;
 
 namespace ClinicaVeterinaria.Controllers{
+
+    [Authorize] //forçar que só utilizadores AUTENTICADOS consigam aceder aos métodos desta classe
+    //aplica-se a TODOS os métodos 
+
+
     public class DonosController : Controller{
         private VetsDB db = new VetsDB();
 
+
         // GET: Donos
+        [AllowAnonymous] //Permite o acesso de Utilizadores ANÓNIMOS aos conteúdos deste método
+        //apenas deste!
         public ActionResult Index(){
             return View(db.Donos.ToList().OrderByDescending(d => d.Nome));
         }
+
 
         // GET: Donos/Details/5
         public ActionResult Details(int? id){

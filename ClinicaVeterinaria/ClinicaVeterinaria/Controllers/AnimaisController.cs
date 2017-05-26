@@ -10,8 +10,7 @@ using ClinicaVeterinaria.Models;
 
 namespace ClinicaVeterinaria.Controllers
 {
-    public class AnimaisController : Controller
-    {
+    public class AnimaisController : Controller{
         private VetsDB db = new VetsDB();
 
         // GET: Animais
