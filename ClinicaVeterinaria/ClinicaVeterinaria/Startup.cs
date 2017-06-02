@@ -60,6 +60,13 @@ namespace ClinicaVeterinaria
                 string userPWD = "123_Asd"; //PASSWORD
                 var chkUser = userManager.Create(user, userPWD);
 
+                //Adicionar o Utilizador à respetiva Role-Dono-
+                if (chkUser.Succeeded)
+                {
+                    var result1 = userManager.AddToRole(user.Id, "Veterinarios");
+                }
+
+
                 // criar um utilizador 'Dono'
                 var user2 = new ApplicationUser();
                 user2.UserName = "blabla4@gmail.com"; //LOGIN
@@ -71,8 +78,10 @@ namespace ClinicaVeterinaria
 
                 //Adicionar o Utilizador à respetiva Role-Dono-
                 if (chkUser.Succeeded){
-                    var result1 = userManager.AddToRole(user.Id, "Dono");
+                    var result1 = userManager.AddToRole(user.Id, "Funcionarios");
                 }
+
+                ////////////////////////Para mais user usar Array e foreach!!!!!
             }
 
             // https://code.msdn.microsoft.com/ASPNET-MVC-5-Security-And-44cbdb97

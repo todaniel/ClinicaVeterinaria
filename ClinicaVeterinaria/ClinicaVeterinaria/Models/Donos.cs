@@ -43,6 +43,6 @@ namespace ClinicaVeterinaria.Models{
 
 
         // especificar que um DONO tem muitos ANIMAIS
-        public ICollection<Animais> ListaDeAnimais { get; set; }
+        public virtual ICollection<Animais> ListaDeAnimais { get; set; }
     }
 }

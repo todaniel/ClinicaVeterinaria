@@ -28,7 +28,31 @@
 
     </dl>
 </div>
+
+
+@* Listar os ANIMAIS associados ao Dono *@
+<div>
+    <table class="table">
+        <tr>
+            <th>Nome</th>
+            <th>Raça</th>
+            @foreach (var animais in Model.ListaDeAnimais){
+                <tr>
+                    <td>@animais.Nome</td>
+                    <td>@animais.Raca</td>
+
+                    @foreach (var consulta in animais.Consultas){
+
+                    }
+
+                </tr>
+            }
+        </tr>
+    </table>
+</div>
+
+
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.DonoID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.DonoID }) |
+    @Html.ActionLink("Voltar ao Início", "Index")
 </p>
