@@ -19,10 +19,18 @@ namespace ClinicaVeterinaria.Controllers{
 
 
         // GET: Donos
-        [AllowAnonymous] //Permite o acesso de Utilizadores ANÓNIMOS aos conteúdos deste método
+        //[AllowAnonymous] //Permite o acesso de Utilizadores ANÓNIMOS aos conteúdos deste método
         //apenas deste!
         public ActionResult Index(){
-            return View(db.Donos.ToList().OrderByDescending(d => d.Nome));
+            //mostra os dados apenas para os FUNCIONARIOS
+            //ou para os VETERINARIOS 
+            if (User.IsInRole("Veterinario") || User.IsInRole("Funcionario")){
+                return View(db.Donos.ToList().OrderByDescending(d => d.Nome));
+            }
+
+            //Se chegar aqui, é porque é DONO
+            return View(db.Donos.Where(d=>d.UserName.Equals(User.Identity.Name)).ToList());
+
         }
 
 

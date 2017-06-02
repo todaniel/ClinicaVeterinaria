@@ -22,26 +22,26 @@ namespace ClinicaVeterinaria.Migrations{
             // ############################################################################################
             // adiciona DONOS
             var donos = new List<Donos> {
-   new Donos  {DonoID=1, Nome = "Luís Freitas", NIF ="813635582" },
-   new Donos  {DonoID=2, Nome = "Andreia Gomes", NIF ="854613462" },
-   new Donos  {DonoID=3, Nome = "Cristina Sousa", NIF ="265368715" },
-   new Donos  {DonoID=4, Nome = "Sónia Rosa", NIF ="835623190" },
-   new Donos  {DonoID=5, Nome = "António Santos", NIF ="751512205" },
-   new Donos  {DonoID=6, Nome = "Gustavo Alves", NIF ="728663835" },
-   new Donos  {DonoID=7, Nome = "Rosa Vieira", NIF ="644388118" },
-   new Donos  {DonoID=8, Nome = "Daniel Dias", NIF ="262618487" },
-   new Donos  {DonoID=9, Nome = "Tânia Gomes", NIF ="842615197" },
-   new Donos  {DonoID=10, Nome = "Andreia Correia", NIF ="635139506" },
-   new Donos  {DonoID=11, Nome = "Márcio Alves", NIF ="715428372" },
-   new Donos  {DonoID=12, Nome = "Inês Martins", NIF ="348385836" },
-   new Donos  {DonoID=13, Nome = "Teresinha Vieira", NIF ="365555205" },
-   new Donos  {DonoID=14, Nome = "Marco Soares", NIF ="540161898" },
-   new Donos  {DonoID=15, Nome = "Lourdes Vieira", NIF ="528411261" },
-   new Donos  {DonoID=16, Nome = "Júlio Morais", NIF ="266563928" },
-   new Donos  {DonoID=17, Nome = "Carmem Oliveira", NIF ="717250604" },
-   new Donos  {DonoID=18, Nome = "Denise Silva", NIF ="843547587" },
-   new Donos  {DonoID=19, Nome = "Cristina Melo", NIF ="416933279" },
-   new Donos  {DonoID=20, Nome = "Augusto Rosa", NIF ="485162005" }
+   new Donos  {DonoID=1, Nome = "Luís Freitas", NIF ="813635582",  UserName="blabla1@gmail.com"  },
+   new Donos  {DonoID=2, Nome = "Andreia Gomes", NIF ="854613462", UserName="blabla2@gmail.com"},
+   new Donos  {DonoID=3, Nome = "Cristina Sousa", NIF ="265368715", UserName="blabla3@gmail.com" },
+   new Donos  {DonoID=4, Nome = "Sónia Rosa", NIF ="835623190", UserName="blabla4@gmail.com" },
+   new Donos  {DonoID=5, Nome = "António Santos", NIF ="751512205", UserName="blabla5@gmail.com" },
+   new Donos  {DonoID=6, Nome = "Gustavo Alves", NIF ="728663835", UserName="blabla6@gmail.com" },
+   new Donos  {DonoID=7, Nome = "Rosa Vieira", NIF ="644388118", UserName="blabla7@gmail.com" },
+   new Donos  {DonoID=8, Nome = "Daniel Dias", NIF ="262618487", UserName="blabla8@gmail.com" },
+   new Donos  {DonoID=9, Nome = "Tânia Gomes", NIF ="842615197", UserName="blabla9@gmail.com" },
+   new Donos  {DonoID=10, Nome = "Andreia Correia", NIF ="635139506", UserName="blabla10@gmail.com" },
+   new Donos  {DonoID=11, Nome = "Márcio Alves", NIF ="715428372", UserName="blabla11@gmail.com" },
+   new Donos  {DonoID=12, Nome = "Inês Martins", NIF ="348385836", UserName="blabla12@gmail.com" },
+   new Donos  {DonoID=13, Nome = "Teresinha Vieira", NIF ="365555205", UserName="blabla13@gmail.com" },
+   new Donos  {DonoID=14, Nome = "Marco Soares", NIF ="540161898", UserName="blabla14@gmail.com" },
+   new Donos  {DonoID=15, Nome = "Lourdes Vieira", NIF ="528411261", UserName="blabla15@gmail.com" },
+   new Donos  {DonoID=16, Nome = "Júlio Morais", NIF ="266563928", UserName="blabla16@gmail.com" },
+   new Donos  {DonoID=17, Nome = "Carmem Oliveira", NIF ="717250604", UserName="blabla17@gmail.com" },
+   new Donos  {DonoID=18, Nome = "Denise Silva", NIF ="843547587", UserName="blabla18@gmail.com" },
+   new Donos  {DonoID=19, Nome = "Cristina Melo", NIF ="416933279", UserName="blabla19@gmail.com" },
+   new Donos  {DonoID=20, Nome = "Augusto Rosa", NIF ="485162005", UserName="blabla20@gmail.com" }
 };
 
             donos.ForEach(dd => context.Donos.AddOrUpdate(d => d.Nome, dd));
